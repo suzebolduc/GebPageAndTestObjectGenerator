@@ -1,4 +1,4 @@
-package com.mutualofomaha.automated.PageAndTestObjectGenerationTool.tests
+package PageAndTestObjectGenerationTool.tests
 
 // Created by Susan T Bolduc, 2020 and 2021
 // If you have questions or feedback, please email susan.bolduc@mutualofomaha.com"

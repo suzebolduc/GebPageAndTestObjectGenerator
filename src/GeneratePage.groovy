@@ -1,5 +1,4 @@
-package com.mutualofomaha.automated.PageAndTestObjectGenerationTool.pages
-
+package com.mutualofomaha.automated.
 // Created by Susan T Bolduc, 2020 and 2021
 // If you have questions or feedback, please email susan.bolduc@mutualofomaha.com"
 import geb.Page
