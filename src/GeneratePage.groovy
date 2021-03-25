@@ -1,4 +1,5 @@
-package com.mutualofomaha.automated.
+
+
 // Created by Susan T Bolduc, 2020 and 2021
 // If you have questions or feedback, please email susan.bolduc@mutualofomaha.com"
 import geb.Page
@@ -13,8 +14,8 @@ class GeneratePage extends Page {
     // complex test static url = "http://automationpractice.com/index.php"
 
     // What the output file should be named and where to put it
-    @Shared String pageName = "StarEastDemoPage"
-    @Shared String testName = "StarEastDemoTest"
+    @Shared String pageFileName = "StarEastDemo"
+    @Shared String outputPath = System.getProperty("user.dir") + "/src/functionalTest/resources/createdPages/"
     // ********************
 
     // variables to hold the gathered information
@@ -34,6 +35,9 @@ class GeneratePage extends Page {
     @Shared def whereStatement = null
     @Shared def testCaseInfo = null
     @Shared Boolean ignore = false
+    @Shared String pageName = pageFileName + "Page"
+    @Shared String testName = pageFileName + "Test"
+    @Shared String toURL
 
     static content = {
         username {$("input", id: "username")}
@@ -139,9 +143,10 @@ class GeneratePage extends Page {
             atStatement = atStatement + "$navName && "
             createClickMethod(navName)
             // build the test
+            toURL = aTags[i].getAttribute("href")
             expectStatement = null
             whenStatement = "          click$navName" + "()"
-            thenStatement = "          waitFor{currentUrl == \"\"}\n          waitFor{at FILLINPAGENAME}"
+            thenStatement = "          waitFor{currentUrl == \"$toURL\"}\n          waitFor{at FILLINPAGENAME}"
             whereStatement = null
             testCaseInfo = "can be Clicked"
             ignore = true
@@ -264,7 +269,7 @@ class GeneratePage extends Page {
                 whereStatement = whereStatement + optionNames[j].text() + "\", \""
             }
             whereStatement = whereStatement.substring(0,whereStatement.length()-3) + "]"
-            testCaseInfo = "#optionName"
+            testCaseInfo = "Select Option #optionName"
             if (selectTags[i].getAttribute("multiple")){
                 ignore = true
             } else {
@@ -816,7 +821,7 @@ class GeneratePage extends Page {
         //println pageObject
 
         // write all the content of the pageObject into a file
-        File file = new File(System.getProperty("user.dir") + "/src/functionalTest/resources/createdPages/$pageName" + ".groovy")
+        File file = new File(outputPath + pageName + ".groovy")
         file.write pageObject
 
         return true
@@ -824,7 +829,7 @@ class GeneratePage extends Page {
 
     def createTheTest() {
         testObject = testObject + "\n}"
-        File file = new File(System.getProperty("user.dir") + "/src/functionalTest/resources/createdPages/$testName" + ".groovy")
+        File file = new File(outputPath + testName + ".groovy")
         file.write testObject
 
         return true
