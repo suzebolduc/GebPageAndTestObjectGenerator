@@ -1,7 +1,7 @@
 
 
 // Created by Susan T Bolduc, 2020 and 2021
-// If you have questions or feedback, please email susan.bolduc@mutualofomaha.com"
+// If you have questions or feedback, please email suze@gsgtestautomation.com"
 import GeneratePage
 import geb.spock.GebSpec
 

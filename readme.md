@@ -21,7 +21,7 @@ There are two pieces to the tool:
 
 It should look something like this:
 
-![img_1.png](img_1.png)
+TBA
 
 ### Configure the tool for your target URL
 
@@ -30,7 +30,7 @@ setupSpec method of the CreatePageAndTestObjectTest.groovy file.
 
 Update the following information in the GeneratePage.groovy file:
 
-![img_2.png](img_2.png)
+TBA
 
   1)  Fill in the url of the target page
   2)  Update the variable pageFilename with the name of the page and test files.  The tool will append Page and Test to the name.

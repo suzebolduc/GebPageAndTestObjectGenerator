@@ -1,7 +1,7 @@
 
 
 // Created by Susan T Bolduc, 2020 and 2021
-// If you have questions or feedback, please email susan.bolduc@mutualofomaha.com"
+// If you have questions or feedback, please email suze@gsgtestautomation.com"
 import geb.Page
 import geb.navigator.Navigator
 import org.apache.commons.lang3.StringUtils
@@ -10,7 +10,7 @@ import spock.lang.Shared
 class GeneratePage extends Page {
     // ******************** Information you need to provide:
     // put the url of the page you want to work with here
-    static url = 'http://webdev4.mutualofomaha.com/SeleniumTestPages/#/animals'
+    static url = 'http://<fill in your url here>>'
     // complex test static url = "http://automationpractice.com/index.php"
 
     // What the output file should be named and where to put it
