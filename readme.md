@@ -45,4 +45,4 @@ Run the test file CreatePageAndTestObjectTest.
     3)  Nove them into your project's pages and tests packages to use the classes.  
 
 ### Questions?  
-Email:  susan.bolduc@mutualofomaha.com
+Email:  suze@gsgtestautomation.com
